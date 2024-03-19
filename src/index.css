@@ -1,0 +1,125 @@
+@font-face {
+  font-family: "sen";
+  src: url(./assets/fonts/sen.ttf);
+}
+@font-face {
+  font-family: "sora";
+  src: url(./assets/fonts/sora.ttf);
+}
+@font-face {
+  font-family: "IBM-r";
+  src: url(./assets/fonts/ibm-regular.ttf);
+}
+@font-face {
+  font-family: "IBM-b";
+  src: url(./assets/fonts/ibm-bold.ttf);
+}
+:root {
+  --main-color: #2483e2;
+  --hover-color: #0472e0;
+  --soft-bg-color: #f0f0f0;
+  --text-color: #747474;
+  --default-color: #141414;
+  --shadow-color: #0c0f0f26;
+  --shadow-hover-color: #b3daf7;
+  --main-transition: 0.25s;
+  --main-delay: 0.25s;
+  /* dark theme colors */
+  --dark-main-color: tan;
+  --dark-hover-color: #b89d7a;
+  --dark-main-bg-color: #242525;
+  --dark-soft-bg-color: #c7b48226;
+  --dark-text-color: #ddd;
+  --dark-default-color: #fefefe;
+  --dark-shadow-color: #fefefe26;
+  --main-padding: 40px;
+  --main-height: calc(100vh - 65px);
+}
+.container[dir="rtl"] * {
+  font-family: "IBM-r";
+}
+.container.dark {
+  background-color: var(--dark-main-bg-color);
+  color: var(--dark-default-color);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1.05rem;
+  font-family: "sen";
+  color: var(--default-color);
+  user-select: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.container.dark * {
+  color: var(--dark-default-color);
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "sora";
+  text-wrap: balance;
+}
+.container[dir="rtl"] h1,
+.container[dir="rtl"] h2,
+.container[dir="rtl"] h3 {
+  font-family: "IBM-b";
+}
+ul {
+  list-style: none;
+}
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  width: calc(100% - 230px);
+  margin-inline: auto;
+}
+@media screen and (max-width: 1199px) {
+  * {
+    font-size: 1rem;
+  }
+  .container {
+    width: calc(100% - 200px);
+  }
+  button > a {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  body.stop-scroll {
+    overflow: auto;
+  }
+  .container {
+    width: calc(100% - 90px);
+  }
+  button > a {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  body.stop-scroll {
+    overflow: hidden;
+  }
+  body.stop-scroll .container {
+    overflow: hidden;
+  }
+  .container {
+    width: 100%;
+  }
+}

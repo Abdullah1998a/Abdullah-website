@@ -1,0 +1,51 @@
+.education {
+  min-height: var(--main-height);
+  padding-inline: var(--main-padding);
+  padding-block: 0 60px;
+}
+.education header {
+  width: fit-content;
+  min-height: auto;
+  display: block;
+  padding: 45px 0;
+  transform-origin: left center;
+  transform: translateX(-100%) scale(0.5);
+  opacity: 0;
+  animation: comingLeftRight 0.5s linear forwards;
+  animation-timeline: show();
+}
+.container[dir="rtl"] .education header {
+  transform-origin: right center;
+  transform: translateX(100%) scaleX(0.5);
+}
+.education header h1 {
+  margin-bottom: 12px;
+  color: var(--main-color);
+  font-size: 1.8rem;
+}
+.education header span {
+  color: var(--text-color);
+}
+.container.dark .education header h1 {
+  color: var(--dark-main-color);
+}
+.container.dark .education header span {
+  color: var(--dark-text-color);
+}
+.education > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  transform-origin: center top;
+  transform: scale(0.5);
+  opacity: 0;
+  animation: faddingInOut 0.5s 0.4s linear forwards;
+  animation-timeline: show();
+}
+@media screen and (max-width: 400px) {
+  .education {
+    padding-inline: 30px;
+  }
+}

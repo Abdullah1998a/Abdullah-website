@@ -1,0 +1,51 @@
+.portfolio {
+  min-height: var(--main-height);
+  padding-inline: var(--main-padding);
+  padding-block: 0 60px;
+}
+.portfolio .projects {
+  display: grid;
+  place-items: center;
+  gap: 30px;
+  padding-bottom: 45px;
+}
+.portfolio header {
+  width: fit-content;
+  min-height: auto;
+  display: block;
+  padding: 45px 0;
+  transform-origin: left center;
+  transform: translateX(-100%) scale(0.5);
+  opacity: 0;
+  animation: comingLeftRight 0.5s linear forwards;
+  animation-timeline: show();
+}
+.container[dir="rtl"] .portfolio header {
+  transform-origin: right center;
+  transform: translateX(100%) scaleX(0.5);
+}
+@keyframes comingLeftRight {
+  to {
+    transform: translateX(0) scaleX(1);
+    opacity: 1;
+  }
+}
+.portfolio header h1 {
+  margin-bottom: 12px;
+  color: var(--main-color);
+  font-size: 1.8rem;
+}
+.portfolio header span {
+  color: var(--text-color);
+}
+.container.dark .portfolio header h1 {
+  color: var(--dark-main-color);
+}
+.container.dark .portfolio header span {
+  color: var(--dark-text-color);
+}
+@media screen and (max-width: 400px) {
+  .portfolio {
+    padding-inline: 30px;
+  }
+}

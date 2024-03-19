@@ -1,0 +1,121 @@
+.project {
+  width: 85%;
+  margin-inline: auto;
+  padding: 25px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--main-transition);
+  transform: scale(0.5);
+  opacity: 0;
+  animation: faddingInOut 0.5s linear forwards;
+  animation-timeline: show();
+}
+@keyframes faddingInOut {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.container.dark .project {
+  background-color: #3a3b3b;
+}
+.project:hover {
+  border-color: var(--main-color);
+}
+.container.dark .project:hover {
+  border-color: var(--dark-main-color);
+}
+.project .img-holder {
+  width: 45%;
+  aspect-ratio: 1.366 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.project .img-holder img {
+  max-width: 100%;
+  object-fit: cover;
+}
+.project .content {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.project:nth-of-type(even) .content {
+  order: -1;
+}
+.project .content h2 {
+  font-size: 1.35rem;
+  text-transform: capitalize;
+  font-family: "sen";
+}
+.project .content p {
+  line-height: 1.35;
+  color: var(--text-color);
+}
+.container[dir="rtl"] .project .content p {
+  line-height: 1.6;
+}
+.project .content button {
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 25px;
+  padding: 10px 15px;
+  transition: var(--main-transition);
+}
+.project .content button:hover {
+  background-color: var(--hover-color);
+  box-shadow: 0 0 0 4px var(--shadow-hover-color);
+}
+
+.container.dark .project .content p {
+  color: var(--dark-text-color);
+}
+.container.dark .project .content button {
+  background-color: var(--dark-main-color);
+}
+.container.dark .project .content button a {
+  color: var(--default-color);
+}
+.container.dark .project .content button:hover {
+  background-color: var(--dark-hover-color);
+  box-shadow: 0 0 0 4px var(--dark-shadow-color);
+}
+@media screen and (max-width: 1023px) {
+  .project {
+    width: 95%;
+  }
+  .project .img-holder {
+    width: 47%;
+  }
+  .project .content {
+    width: 48%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .project {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .project {
+    flex-direction: column;
+    gap: 35px;
+  }
+  .project:nth-of-type(even) .content {
+    order: initial;
+  }
+  .project .img-holder,
+  .project .content {
+    width: 100%;
+  }
+}

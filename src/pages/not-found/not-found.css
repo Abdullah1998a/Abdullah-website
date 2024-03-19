@@ -1,0 +1,40 @@
+.not-found {
+  min-height: var(--main-height);
+  padding-inline: var(--main-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.5);
+  opacity: 0;
+  animation: faddingInOut 0.5s linear forwards;
+  animation-timeline: show();
+}
+@keyframes faddingInOut {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.not-found h1 {
+  font-family: "sen";
+  font-size: 6.5rem;
+  color: rgb(240, 16, 16);
+}
+.container.dark .not-found h1 {
+  color: rgb(233, 68, 68);
+}
+.not-found p {
+  color: var(--text-color);
+  margin-block: 10px;
+}
+.not-found button a {
+  text-decoration: underline;
+  transition: var(--main-transition);
+}
+.not-found button:hover a {
+  color: var(--main-color);
+}
+.container.dark .not-found button:hover a {
+  color: var(--dark-main-color);
+}

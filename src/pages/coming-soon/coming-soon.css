@@ -1,0 +1,47 @@
+.coming-soon {
+  min-height: var(--main-height);
+  padding-inline: var(--main-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.5);
+  opacity: 0;
+  animation: faddingInOut 0.5s linear forwards;
+  animation-timeline: show();
+}
+@keyframes faddingInOut {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.coming-soon h1 {
+  font-family: "sen";
+  font-size: 3rem;
+  text-align: center;
+  color: var(--main-color);
+}
+.container.dark .coming-soon h1 {
+  color: var(--dark-main-color);
+}
+.coming-soon p {
+  text-align: center;
+  color: var(--text-color);
+  margin-block: 10px;
+}
+.coming-soon button a {
+  text-decoration: underline;
+  transition: var(--main-transition);
+}
+.coming-soon button:hover a {
+  color: var(--main-color);
+}
+.container.dark .coming-soon button:hover a {
+  color: var(--dark-main-color);
+}
+@media screen and (max-width: 400px) {
+  .coming-soon h1 {
+    font-size: 2.5rem;
+  }
+}
